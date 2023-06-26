@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { styles } from "./styles";
+import Icon from "react-native-vector-icons/Ionicons";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 dayjs.extend(relativeTime);
@@ -47,6 +48,12 @@ const Message = ({ message }) => {
     >
       <Text style={styles.text}>{message.text}</Text>
       <Text style={styles.time}>{dayjs(message.createdAt).fromNow()}</Text>
+          <Icon
+              style={styles.cloudIcon}
+        name="cloud"
+        size={26}
+        color={isMyMessage() ? "#34B7F1" : "#25D366"}
+      />
     </View>
   );
 }
