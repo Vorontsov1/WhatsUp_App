@@ -16,23 +16,23 @@ export const styles = StyleSheet.create({
     marginRight: 10,
   },
   content: {
-      flex: 1,
-      borderBottomWidth: StyleSheet.hairlineWidth,
-      borderBottomColor: 'lightgrey',
-  
+    flex: 1,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: "white",
   },
   row: {
-      flexDirection: "row",
-      marginBottom: 5,
+    flexDirection: "row",
+    marginBottom: 5,
   },
   name: {
     flex: 1,
-      fontFamily: "Mulish-Bold",
+    fontFamily: "Mulish-Bold",
     fontSize: 18,
+    color: 'white',
   },
-    subTitle: {
-        color: 'grey',
-        fontFamily: 'Mulish-ExtraBold',
-        fontSize: 15,
+  subTitle: {
+    color: "white",
+    fontFamily: "Mulish-ExtraBold",
+    fontSize: 15,
   },
 });

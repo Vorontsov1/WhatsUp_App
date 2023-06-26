@@ -4,7 +4,7 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { styles } from "./styles";
 
-const ChatListItem = () => {
+const ChatListItem = ({chat}) => {
   const [fontsLoaded] = useFonts({
     "Mulish-Bold": require("../../../assets/fonts/Mulish-Bold.ttf"),
     "Mulish-ExtraBold": require("../../../assets/fonts/Mulish-ExtraBold.ttf"),
@@ -23,16 +23,20 @@ const ChatListItem = () => {
     <View style={styles.container} onLayout={onLayoutRootView}>
       <Image
         source={{
-          uri: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg",
+          uri: chat.user.image,
         }}
         style={styles.avatar}
       />
       <View style={styles.content}>
         <View style={styles.row}>
-          <Text style={styles.name} numberOfLines={1}>Laura</Text>
-          <Text style={styles.subTitle}>4:26</Text>
+          <Text style={styles.name} numberOfLines={1}>
+            {chat.user.name}
+          </Text>
+                  <Text style={styles.subTitle}>{chat.lastMessage.createdAt}</Text>
         </View>
-        <Text style={styles.subTitle} numberOfLines={2}>Hello Laura</Text>
+        <Text style={styles.subTitle} numberOfLines={2}>
+          {chat.lastMessage.text}
+        </Text>
       </View>
     </View>
   );
