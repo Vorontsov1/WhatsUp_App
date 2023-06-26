@@ -2,7 +2,14 @@ import { useCallback } from "react";
 import { View, Text, Image } from "react-native";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+
+
 import { styles } from "./styles";
+
+dayjs.extend(relativeTime);
+
 
 const ChatListItem = ({chat}) => {
   const [fontsLoaded] = useFonts({
@@ -32,7 +39,9 @@ const ChatListItem = ({chat}) => {
           <Text style={styles.name} numberOfLines={1}>
             {chat.user.name}
           </Text>
-                  <Text style={styles.subTitle}>{chat.lastMessage.createdAt}</Text>
+          <Text
+            style={styles.subTitle}>
+              {dayjs(chat.lastMessage.createdAt).fromNow(true)}</Text>
         </View>
         <Text style={styles.subTitle} numberOfLines={2}>
           {chat.lastMessage.text}
