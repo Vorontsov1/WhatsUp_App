@@ -14,7 +14,7 @@ dayjs.extend(relativeTime);
 const ChatListItem = ({chat}) => {
   const [fontsLoaded] = useFonts({
     "Mulish-Bold": require("../../../assets/fonts/Mulish-Bold.ttf"),
-    "Mulish-ExtraBold": require("../../../assets/fonts/Mulish-ExtraBold.ttf"),
+    "Mulish-Medium": require("../../../assets/fonts/Mulish-Medium.ttf"),
   });
 
   const onLayoutRootView = useCallback(async () => {

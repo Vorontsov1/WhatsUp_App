@@ -28,11 +28,11 @@ export const styles = StyleSheet.create({
     flex: 1,
     fontFamily: "Mulish-Bold",
     fontSize: 18,
-    color: 'white',
+    color: "white",
   },
   subTitle: {
     color: "white",
-    fontFamily: "Mulish-ExtraBold",
-    fontSize: 15,
+    fontFamily: "Mulish-Medium",
+    fontSize: 16,
   },
 });
