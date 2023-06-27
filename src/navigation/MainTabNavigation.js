@@ -1,6 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {Text} from 'react-native';
 import ChatsScreen from '../screens/ChatsScreen';
+import SettingsScreen from '../screens/SettingsScreen';
 import NotImplementedScreen from '../screens/NotImplementedScreen';
 import { Ionicons, Entypo } from "@expo/vector-icons";
 
@@ -100,7 +101,7 @@ const MainTabNavigator = () => {
         />
         <Tab.Screen
           name="Settings"
-          component={NotImplementedScreen}
+          component={SettingsScreen}
           options={{
             tabBarIcon: ({ focused, size }) => (
               <Ionicons
