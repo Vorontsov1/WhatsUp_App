@@ -1,4 +1,5 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {Text} from 'react-native';
 import ChatsScreen from '../screens/ChatsScreen';
 import NotImplementedScreen from '../screens/NotImplementedScreen';
 import { Ionicons, Entypo } from "@expo/vector-icons";
@@ -27,6 +28,11 @@ const MainTabNavigator = () => {
                 color={focused ? "black" : "#ffffff"}
               />
             ),
+            tabBarLabel: ({ focused, color }) => (
+              <Text style={{ color: focused ? "black" : "#ffffff" }}>
+                Status
+              </Text>
+            ),
           }}
         />
         <Tab.Screen
@@ -39,6 +45,11 @@ const MainTabNavigator = () => {
                 size={size}
                 color={focused ? "black" : "#ffffff"}
               />
+            ),
+            tabBarLabel: ({ focused, color }) => (
+              <Text style={{ color: focused ? "black" : "#ffffff" }}>
+                Calls
+              </Text>
             ),
           }}
         />
@@ -53,12 +64,17 @@ const MainTabNavigator = () => {
                 color={focused ? "black" : "#ffffff"}
               />
             ),
+            tabBarLabel: ({ focused, color }) => (
+              <Text style={{ color: focused ? "black" : "#ffffff" }}>
+                Camera
+              </Text>
+            ),
           }}
         />
         <Tab.Screen
           name="Chats"
           component={ChatsScreen}
-          options={({navigation}) => ({
+          options={({ navigation }) => ({
             tabBarIcon: ({ focused, size }) => (
               <Ionicons
                 name="ios-chatbubbles-sharp"
@@ -72,8 +88,13 @@ const MainTabNavigator = () => {
                 name="new-message"
                 size={20}
                 color="white"
-                style={{ marginRight: 10 }} 
+                style={{ marginRight: 10 }}
               />
+            ),
+            tabBarLabel: ({ focused, color }) => (
+              <Text style={{ color: focused ? "black" : "#ffffff" }}>
+                Message
+              </Text>
             ),
           })}
         />
@@ -87,6 +108,11 @@ const MainTabNavigator = () => {
                 size={size}
                 color={focused ? "black" : "#ffffff"}
               />
+            ),
+            tabBarLabel: ({ focused, color }) => (
+              <Text style={{ color: focused ? "black" : "#ffffff" }}>
+                Settings
+              </Text>
             ),
           }}
         />
