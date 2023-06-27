@@ -1,4 +1,4 @@
-import React from 'react';
+import {useEffect} from 'react';
 import {
   StyleSheet,
   ImageBackground,
@@ -6,6 +6,7 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from "react-native";
+import {useRoute, useNavigation} from '@react-navigation/native';
 import Message from '../components/Message';
 import InputBox from '../components/InputBox';
 import messages from '../../assets/data/messages.json';   
@@ -13,9 +14,19 @@ import bg from '../../assets/images/BG.png';
 
 
 const ChatScreen = () => {
+
+  const route = useRoute();
+  const navigation = useNavigation();
+
+
+  useEffect(() => {
+    navigation.setOptions({ title: route.params.name });
+  }, [route.params.name]);
+
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
+      keyboardVerticalOffset={Platform.OS === "ios" ? 60 : 90}
       style={styles.bg}
     >
       <ImageBackground source={bg} style={styles.bg}>
@@ -33,8 +44,9 @@ const ChatScreen = () => {
  
 
 const styles = StyleSheet.create({
-    bg: {
-      flex: 1,
+  bg: {
+    flex: 1,
+    backgroundColor: "#34B7F1",
   },
   list: {
     padding: 15,

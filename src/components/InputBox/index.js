@@ -3,6 +3,7 @@ import { View, TextInput } from "react-native";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { AntDesign, MaterialIcons } from "@expo/vector-icons";
+import {SafeAreaView} from 'react-native-safe-area-context';
 import { styles } from "./styles";
 
 const InputBox = () => {
@@ -29,7 +30,9 @@ const InputBox = () => {
     return null;
   }
   return (
-    <View style={styles.container} onLayout={onLayoutRootView}>
+    <SafeAreaView
+    edges={['bottom']} 
+      style={styles.container} onLayout={onLayoutRootView}>
       {/* icon */}
       <AntDesign name="plus" size={20} color="#075E54" />
 
@@ -46,7 +49,7 @@ const InputBox = () => {
         size={16}
         color="white"
       />
-    </View>
+    </SafeAreaView>
   );
 };
 

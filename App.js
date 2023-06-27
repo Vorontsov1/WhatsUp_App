@@ -1,7 +1,6 @@
-import { StatusBar } from 'expo-status-bar';
-import { View } from 'react-native';
-import ChatsScreen from './src/screens/ChatsScreen';
-import ChatScreen from './src/screens/ChatScreen';
+import { StatusBar } from "expo-status-bar";
+import { View } from "react-native";
+import Navigator from "./src/navigation";
 
 export default function App() {
   return (
@@ -10,13 +9,10 @@ export default function App() {
         flex: 1,
         backgroundColor: "#34B7F1",
         justifyContent: "center",
-        paddingVertical: 50,
       }}
     >
-      {/* <ChatsScreen /> */}
-      <ChatScreen />
+      <Navigator />
       <StatusBar style="auto" />
     </View>
   );
 }
-
