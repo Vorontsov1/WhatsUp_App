@@ -17,8 +17,6 @@ export const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: "white",
   },
   row: {
     flexDirection: "row",
