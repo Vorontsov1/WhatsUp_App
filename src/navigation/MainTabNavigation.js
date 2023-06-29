@@ -1,6 +1,6 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {Text} from 'react-native';
-import ChatsScreen from '../screens/ChatsScreen';
+import ChatsScreen from '../screens/ChatsScreen/ChatsScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import NotImplementedScreen from '../screens/NotImplementedScreen';
 import { Ionicons, Entypo } from "@expo/vector-icons";
@@ -94,7 +94,7 @@ const MainTabNavigator = () => {
             ),
             tabBarLabel: ({ focused, color }) => (
               <Text style={{ color: focused ? "black" : "#ffffff" }}>
-                Message
+                Chats
               </Text>
             ),
           })}
